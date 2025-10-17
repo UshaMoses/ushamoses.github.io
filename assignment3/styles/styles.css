@@ -1,0 +1,42 @@
+html {
+  background-color: white;
+}
+
+body {
+  font: 1.2em / 1.5 system-ui;
+  padding: 20px;
+  width: 500px;
+  background-color:#efefef;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left:auto;
+  margin-right: auto;
+}
+ul{
+    background-color: white;
+    border-width: 5px;
+    border: purple;
+    padding: 30px;
+    border-radius: 20px;
+}
+h1{
+    color: darkslategray;
+    border-bottom: 10px Dotted purple;
+    font-size: 2rem;
+}
+h2{
+    font-size: 1.5rem;
+}
+div{
+    color: darkslategray;
+    font-weight: bold;
+}
+a{
+    color: green;
+    
+}
+a:hover{
+    color: darkgreen;
+    text-decoration: none;
+
+}
