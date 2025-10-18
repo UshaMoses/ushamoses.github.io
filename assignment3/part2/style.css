@@ -67,4 +67,8 @@ nav a {
 
 .feature {
   width: 200px;
+  /*Solution: Wrap text around the "feature" image to the right and bottom
+         with suitable space between image and text*/
+         float: left;
+         margin: 8px 30px 20px 0;
 }
