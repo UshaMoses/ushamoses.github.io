@@ -4,7 +4,10 @@
 html{
   font-family: IBMPlex serif;
 }
-
+h1,
+h2 {
+  font-family: "Bevan" serif;
+}
 
 /* General setup */
 
