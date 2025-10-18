@@ -35,7 +35,7 @@ a { color:green
 
 a:hover,
 a:focus {
-    color:darkgreen
-    text-decoration: none
+    color:darkgreen;
+    text-decoration: none;
 }
   
