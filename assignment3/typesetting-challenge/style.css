@@ -118,7 +118,7 @@ nav li a:hover{
   color: white;
   background: #aa6666;
 }
-nav li a: active {
+nav li a:active {
   color: white;
   background: black;
 }
