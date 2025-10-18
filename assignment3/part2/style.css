@@ -33,6 +33,9 @@ img {
 nav {
   background-color: black;
   padding: 0.5em;
+  /* Solution: Make navigation bar scroll with content normally but then stick  to the top of the viewport*/
+  position: sticky;
+  top: 0;
 }
 
 nav ul {
