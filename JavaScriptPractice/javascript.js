@@ -1,6 +1,20 @@
+// l
+// let x=3;
+// let y = 4;
+// x=y;
+// console.log(x);
 
-let myNameArray = ["Chris", "Bob", "Jim"];
-let myNumberArray = [10, 15, 40];
+const btn = document.querySelector("button");
+const txt = document.querySelector("p");
 
-console.log(myNameArray[0]);
-console.log(myNumberArray[2]);
+btn.addEventListener("click", updateBtn);
+
+function updateBtn() {
+    if(btn.textContent === "Start machine") {
+        btn.textContent = "Stop machine";
+        txt.textContent = "The machine is running";
+    } else {
+        btn.textContent = "Start machine";
+        txt.textContent = "The machine is stopped";
+    }
+}
