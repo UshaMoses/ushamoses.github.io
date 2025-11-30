@@ -153,3 +153,24 @@ while (balls.length < 25) {
 
 // ---------- CREATE EVIL CIRCLE ----------
 const evil = new EvilCircle(100, 100);
+// ---------- MAIN LOOP ----------
+function loop() {
+  ctx.fillStyle = "rgba(0,0,0,0.25)";
+  ctx.fillRect(0, 0, width, height);
+
+  for (const ball of balls) {
+    if (ball.exists) {
+      ball.draw();
+      ball.update();
+      ball.collisionDetect();
+    }
+  }
+
+  evil.draw();
+  evil.checkBounds();
+  evil.collisionDetect();
+
+  requestAnimationFrame(loop);
+}
+
+loop();
