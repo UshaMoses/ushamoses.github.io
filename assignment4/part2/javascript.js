@@ -14,3 +14,18 @@ const images = [
 ];
 //base URL for images
 const baseURL = https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
+
+//FUNCTION TO UPDATE LARGE IMAGE
+function updateDisplayedImage(imageElement)
+ {
+  displayedImage.src = imageElement.src;
+  displayedImage.alt = imageElement.alt;
+}
+//loop through images to create thumbnails
+for (const image of images) {
+  const newImage = document.createElement("img");
+  newImage.src = baseURL + image.filename;
+  newImage.alt = image.alt;
+  newImage.tabIndex = 0;
+  thumbBar.appendChild(newImage);
+}
