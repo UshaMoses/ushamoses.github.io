@@ -23,30 +23,31 @@ function updateDisplayedImage(imageElement)
 }
 //loop through images to create thumbnails
 for (const image of images) {
-  const newImage = document.createElement("image");
-  newImage.src = baseURL + image.filename;
+  const newImage = document.createElement("img");
+  newImage.src = `${baseURL}${image.filename}`;
   newImage.alt = image.alt;
   newImage.tabIndex = 0;
   thumbBar.appendChild(newImage);
 }
 //click event for thumbnails
-newImage.addEventListener("click", () => {
-  updateDisplayedImage(newImage)});
+newImage.addEventListener("click",updateDisplayedImage);
 
 //keyboard support: Enter key
-newImage.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") 
-    updateDisplayedImage(newImage)
+newImage.addEventListener("keydown", (e) => {
+  if (e.code === "Enter"){ 
+    updateDisplayedImage(e)}
 });
+
 //darken/lighten button fuuctionality
 btn.addEventListener("click", () => {
+    //If the button has a "dark" class set, change text to "lighten" and make the overlay darker
   if (btn.classList.contains("dark")) {
-    btn.classList.remove("dark");
-    btn.textContent = "lighten";
+        btn.textContent = "lighten";
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
   } else {
-    btn.classList.add("dark");
-    btn.textContent = "darken";
+  btn.textContent = "darken";
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
+  //Toggle the class ready doe the next button press
+    btn.classList.toggle("dark");
 });
