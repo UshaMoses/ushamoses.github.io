@@ -125,3 +125,31 @@ class EvilCircle extends Shape {
     }
   }
 }
+
+// ------- CREATE BALLS ---------
+
+let balls = [];
+
+while (balls.length < 25) {
+  const size = random(10, 20);
+  const ball = new Ball(
+    random(size, width - size),
+    random(size, height - size),
+    random(-7, 7),
+    random(-7, 7),
+    size,
+    randomRGB()
+  );
+
+  balls.push(ball);
+  ballCount++;
+}
+
+para.textContent = "Ball count: " + ballCount;
+
+// ------- CREATE EVIL CIRCLE ---------
+
+const evil = new EvilCircle(
+  random(0 + 20, width - 20),
+  random(0 + 20, height - 20)
+);
