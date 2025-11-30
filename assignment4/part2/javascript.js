@@ -23,9 +23,30 @@ function updateDisplayedImage(imageElement)
 }
 //loop through images to create thumbnails
 for (const image of images) {
-  const newImage = document.createElement("img");
+  const newImage = document.createElement("image");
   newImage.src = baseURL + image.filename;
   newImage.alt = image.alt;
   newImage.tabIndex = 0;
   thumbBar.appendChild(newImage);
 }
+//click event for thumbnails
+newImage.addEventListener("click", () => {
+  updateDisplayedImage(newImage)});
+
+//keyboard support: Enter key
+newImage.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") 
+    updateDisplayedImage(newImage)
+});
+//darken/lighten button fuuctionality
+btn.addEventListener("click", () => {
+  if (btn.classList.contains("dark")) {
+    btn.classList.remove("dark");
+    btn.textContent = "lighten";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+  } else {
+    btn.classList.add("dark");
+    btn.textContent = "darken";
+    overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
+  }
+});
