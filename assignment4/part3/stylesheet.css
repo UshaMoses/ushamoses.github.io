@@ -6,3 +6,13 @@ html, body {
 html {
   background-color: #222;
 }
+body {
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+  font-family: Arial, sans-serif;
+}
