@@ -39,5 +39,23 @@
             filename:"pic5.jpg" , alt: 'Large ornate clock on a tower'
         }
     ]; 
-    const baseurl = 'https://mdn.github.io/shared-assets/images/examples/learn/gallery/';   
+    const baseurl = 'https://mdn.github.io/shared-assets/images/examples/learn/gallery/';
+    
+    //update the large image
+    function updateDisplayedImage (imgElement) {
+        displayedImage.src = imgElement.src;
+        displayedImage.alt = imgElement.alt;
+    }
+    //add thumbnails
+    for(const image of images)
+    {
+        const newImage = document.createElement('img');
+        newImage.src = baseurl + image.filename;
+        newImage.alt = image.alt;
+        newImage.tabIndex = 0;
+        thumbBar.appendChild(newImage);
+
+       
+        });
+    }
 </script>
