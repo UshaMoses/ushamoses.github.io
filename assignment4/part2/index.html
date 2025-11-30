@@ -15,3 +15,29 @@
 <button class="dark">Darken</button>
 </div>
 <div class=" "thumb-bar"></div>
+<script>
+    // DOM refernces
+    const displayedImage = document.querySelector('.displayed-img');
+    const thumbBar = document.querySelector('.thumb-bar');
+    const btn = document.querySelector('button');
+    const overlay = document.querySelector('.overlay');
+    // Array of image filenames   
+    const images = [
+        {
+            filename:"pic1.jpg" , alt: 'Closeup of a human eye'
+        },
+        {
+            filename:"pic2.jpg" , alt: 'Rock that looks like a wave'
+        },
+        {
+            filename:"pic3.jpg" , alt: 'Purple and white pansies'
+        },
+        {
+            filename:"pic4.jpg" , alt: 'Section of wall from a medieval building'
+        },
+        {
+            filename:"pic5.jpg" , alt: 'Large ornate clock on a tower'
+        }
+    ]; 
+    const baseurl = 'https://mdn.github.io/shared-assets/images/examples/learn/gallery/';   
+</script>
