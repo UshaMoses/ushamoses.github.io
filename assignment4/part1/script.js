@@ -31,4 +31,13 @@ function returnRandomStoryString() {
 
 // Event listener and partial generate function definition
 
-generateBtn.addEventListener("click", generateStory); 
+generateBtn.addEventListener("click", generateStory);
+function generateStory() {
+  if (customName.value !== "") {
+    const name = customName.value;
+  }
+
+  if (document.getElementById("uk").checked) {
+    const weight = Math.round(300);
+    const temperature = Math.round(94);
+  }
