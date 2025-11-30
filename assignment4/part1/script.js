@@ -41,3 +41,7 @@ function generateStory() {
     const weight = Math.round(300);
     const temperature = Math.round(94);
   }
+// TODO: replace "" with the correct expression
+  story.textContent = "";
+  story.style.visibility = "visible";
+}
