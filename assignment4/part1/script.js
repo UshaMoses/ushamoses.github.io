@@ -32,14 +32,20 @@ function returnRandomStoryString() {
 // Event listener and partial generate function definition
 
 generateBtn.addEventListener("click", generateStory);
+
 function generateStory() {
+  let storyText = returnRandomStoryString();
+
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = storyText.replace("Bob", name);
   }
 
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
+    const weight = `${Math.round(300)} stones`;
+    const temperature =`${Math.round((94 - 32) * 5 / 9)} centigrade`;
+    newStory = newStory.replace("300 pounds", weight);
+    newStory = newStory.replace("94 Fahrenheit", temperature);
   }
 // TODO: replace "" with the correct expression
   story.textContent = "";
