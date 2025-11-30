@@ -34,3 +34,23 @@ img {
   margin: 20px 0;
 }
 
+.form-section {
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.separator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.separator label {
+  flex: 2;
+}
+
+.separator input,
+.separator select {
+  flex: 3;
+  padding: 5px;
+}
