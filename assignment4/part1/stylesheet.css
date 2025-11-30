@@ -3,3 +3,7 @@ body {
     margin: 0 auto;
     Width: 500px;
 }
+
+fieldset {
+  border: 0;
+}
