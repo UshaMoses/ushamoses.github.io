@@ -55,7 +55,27 @@
         newImage.tabIndex = 0;
         thumbBar.appendChild(newImage);
 
-       
+        newImage.addEventListener('click', () => {
+            updateDisplayedImage(newImage);
+            newImage.addEventListener('keydown', (event) => {
+                if(event.key === 'Enter' || event.key === ' ') {
+                    updateDisplayedImage(newImage);
+                }
+            });
+        }
+        //darken/lighten button
+        btn.addEventListener('click', () => {
+            const btnClass = btn.getAttribute('class');
+            if (btn.classList.contains('dark')) {
+                btn.textContent = 'Lighten';
+                overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+                btn.classList.remove('dark');
+            } else {
+                btn.textContent = 'Darken';
+                overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+                btn.classList.add('dark');
+            }
         });
-    }
-</script>
+        </script>
+        </body>
+</html>
