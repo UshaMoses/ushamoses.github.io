@@ -48,6 +48,6 @@ btn.addEventListener("click", () => {
   btn.textContent = "darken";
     overlay.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }
-  //Toggle the class ready doe the next button press
+  //Toggle the class ready move to  the next button press
     btn.classList.toggle("dark");
 });
