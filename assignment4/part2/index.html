@@ -2,19 +2,19 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
         <title>Javascript Image Gallery </title>
-        <link rel="stylesheet" href="styles.css" />
+        <link rel="stylesheet" href="stylesheet.css" />
     </head> 
     <body>
         <h1> ImageGallery Example</h1>
 
 <div class = "full-img" >
-    <img class="displayed-img" src= "https://mdn.github.io/shared-assets/images/examples/learn/gallery/pic1.jpg" alt="Closeup of a human eye"></div>
-<div></div> class ="overlay"></div>
-<button class="dark">Darken</button>
+    <img class ="displayed-img" src= "https://mdn.github.io/shared-assets/images/examples/learn/gallery/pic1.jpg" alt="Closeup of a human eye"></div>
+    <div class ="overlay" id = "overlay"></div>
+    <button class="dark" id ="button">Darken</button>
 </div>
-<div class=" "thumb-bar"></div>
+<div class="thumb-bar"></div>
 <script>
     // DOM refernces
     const displayedImage = document.querySelector('.displayed-img');
@@ -42,9 +42,9 @@
     const baseurl = 'https://mdn.github.io/shared-assets/images/examples/learn/gallery/';
     
     //update the large image
-    function updateDisplayedImage (imgElement) {
-        displayedImage.src = imgElement.src;
-        displayedImage.alt = imgElement.alt;
+    function updateDisplayedImage(imgElement) {
+        displayedImage.src = imgElement.target.src;
+        displayedImage.alt = imgElement.target.alt;
     }
     //add thumbnails
     for(const image of images)
@@ -55,17 +55,11 @@
         newImage.tabIndex = 0;
         thumbBar.appendChild(newImage);
 
-        newImage.addEventListener('click', () => {
-            updateDisplayedImage(newImage);
-            newImage.addEventListener('keydown', (event) => {
-                if(event.key === 'Enter' || event.key === ' ') {
-                    updateDisplayedImage(newImage);
-                }
-            });
+        newImage.addEventListener('click', updateDisplayedImage);
         }
         //darken/lighten button
         btn.addEventListener('click', () => {
-            const btnClass = btn.getAttribute('class');
+            // const btnClass = btn.getAttribute('class');
             if (btn.classList.contains('dark')) {
                 btn.textContent = 'Lighten';
                 overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
